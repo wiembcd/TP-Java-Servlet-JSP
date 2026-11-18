@@ -1,0 +1,50 @@
+
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <filter>
+        <filter-name>LoggingFilter</filter-name>
+        <filter-class>ex1.LoggingFilter</filter-class>
+        <init-param>
+            <param-name>logPrefix</param-name>
+            <param-value>MY_APP</param-value>
+        </init-param>
+    </filter>
+
+    <filter>
+        <filter-name>SecurityFilter</filter-name>
+        <filter-class>ex1.SecurityFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>LoggingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>SecurityFilter</filter-name>
+        <url-pattern>/ListItems</url-pattern>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>ex1.ApplicationListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>FormServlet</servlet-name>
+        <servlet-class>ex1.FirstServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FormServlet</servlet-name>
+        <url-pattern>/FormServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>FormServlet</servlet-name>
+        <url-pattern>/Form_Servlet</url-pattern>
+    </servlet-mapping>
+
+</web-app>

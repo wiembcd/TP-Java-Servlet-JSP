@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire</title>
+</head>
+<body>
+
+
+<h1>Informations personnelles</h1>
+
+<form action="FormServlet" method="post">
+
+    <label>Prénom :</label>
+    <input type="text" name="firstName" required>
+    <br><br>
+
+    <label>Nom :</label>
+    <input type="text" name="lastName" required>
+    <br><br>
+
+    <label>Date de naissance :</label>
+    <input type="text" name="birthDate"
+           placeholder="mm/dd/yyyy" required>
+    <br><br>
+
+    <label>Sexe :</label>
+    <input type="radio" name="sex" value="Homme" required>
+    Homme
+
+    <input type="radio" name="sex" value="Femme">
+    Femme
+
+    <br><br>
+
+    <input type="submit" value="Envoyer">
+
+</form>
+
+<br>
+
+<a href="ReadCookie">Lire les cookies</a>
+
+<hr>
+<h2>HTTP Sessions</h2>
+<p><a href="ShowSession">Track my session</a></p>
+<p><a href="items.html">Manage my items</a></p>
+</body>
+</html>
